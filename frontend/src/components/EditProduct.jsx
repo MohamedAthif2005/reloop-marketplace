@@ -17,7 +17,7 @@ function EditProduct() {
         }
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/products/${id}`,{headers: {Authorization: `Bearer ${token}`}})
+                const response = await axios.get(`https://reloop-backend.onrender.com/products/${id}`,{headers: {Authorization: `Bearer ${token}`}})
                 setFormData(response.data)
             } catch (err) {
                 console.error(err)
@@ -33,7 +33,7 @@ function EditProduct() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const response = await axios.put(
-            `http://localhost:5000/products/${id}`,
+            `https://reloop-backend.onrender.com/products/${id}`,
             formData,
             {
                 headers: {

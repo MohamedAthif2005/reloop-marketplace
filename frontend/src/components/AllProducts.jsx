@@ -30,10 +30,10 @@ function AllProducts({ searchTerm: propSearchTerm, setSearchTerm: setParentSearc
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        let url = "http://localhost:5000/products/allproducts";
+        let url = "https://reloop-backend.onrender.com/products/allproducts";
 
         if (searchValue.trim()) {
-          url = `http://localhost:5000/products/search/${searchValue}`;
+          url = `https://reloop-backend.onrender.com/products/search/${searchValue}`;
         } else if (
           filters.category ||
           filters.condition ||
@@ -42,7 +42,7 @@ function AllProducts({ searchTerm: propSearchTerm, setSearchTerm: setParentSearc
           filters.maxPrice
         ) {
           const query = new URLSearchParams(filters).toString();
-          url = `http://localhost:5000/products/filter?${query}`;
+          url = `https://reloop-backend.onrender.com/products/filter?${query}`;
         }
 
         const response = await axios.get(url);
@@ -64,7 +64,7 @@ function AllProducts({ searchTerm: propSearchTerm, setSearchTerm: setParentSearc
     navigate(`/product/${id}`);
   };
 
-  const backendBase = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+  const backendBase = import.meta.env.VITE_API_URL || 'https://reloop-backend.onrender.com'
 
   return (
     <div>

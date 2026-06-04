@@ -19,7 +19,7 @@ function RegisterPage() {
         e.preventDefault()
         try
         {
-            const response = await axios.post("http://localhost:5000/api/auth/register",formData)
+            const response = await axios.post("https://reloop-backend.onrender.com/api/auth/register",formData)
             setMessage(response.data.message)
             setFormData({name:"",email:"",phone:"",password:"",city:""})
             navigate("/login")

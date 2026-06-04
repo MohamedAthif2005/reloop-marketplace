@@ -21,7 +21,7 @@ function PassChange() {
         e.preventDefault()
         setMessage("")
         try {
-            const response = await axios.patch("http://localhost:5000/user/passchange",
+            const response = await axios.patch("https://reloop-backend.onrender.com/user/passchange",
                     {
                         oldpass: oldPassword,
                         newpass: newPassword

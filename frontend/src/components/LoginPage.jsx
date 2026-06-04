@@ -16,7 +16,7 @@ function LoginPage() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post("http://localhost:5000/api/auth/login", formData)
+            const response = await axios.post("https://reloop-backend.onrender.com/api/auth/login", formData)
             setMessage("Login successful")
             localStorage.setItem("token",response.data.token)
             localStorage.setItem("userId", response.data.user._id)

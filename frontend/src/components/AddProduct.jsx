@@ -34,7 +34,7 @@ function AddProduct() {
             if (selectedFile) data.append('image', selectedFile)
 
             const response = await axios.post(
-                "http://localhost:5000/products/addproduct",
+                "https://reloop-backend.onrender.com/products/addproduct",
                 data,
                 {
                     headers: {

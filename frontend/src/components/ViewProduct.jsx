@@ -20,7 +20,7 @@ function ViewProduct() {
         }
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/products/viewproduct/${id}`,{
+                const response = await axios.get(`https://reloop-backend.onrender.com/products/viewproduct/${id}`,{
                     headers:{"Authorization":`Bearer ${token}`}
                 })
                 setProduct(response.data.product)
@@ -37,7 +37,7 @@ function ViewProduct() {
         return <p>Loading...</p>
     }
 
-    const backendBase = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+    const backendBase = import.meta.env.VITE_API_URL || 'https://reloop-backend.onrender.com'
     const imageSrc = product.image || (product.images && product.images.length ? `${backendBase}${product.images[0]}` : productPlaceholder)
 
     return (
@@ -80,7 +80,7 @@ function ViewProduct() {
 
                                     try {
                                         const response = await axios.post(
-                                            "http://localhost:5000/messages/",
+                                            "https://reloop-backend.onrender.com/messages/",
                                             { productId: product._id, message: senderMessage },
                                             {
                                                 headers: {

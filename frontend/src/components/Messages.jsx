@@ -11,7 +11,7 @@ function Messages() {
     useEffect(() => {
         const fetchMessages = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/messages", {
+                const response = await axios.get("https://reloop-backend.onrender.com/messages", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -75,7 +75,7 @@ function Messages() {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/messages/reply",
+                "https://reloop-backend.onrender.com/messages/reply",
                 {
                     message: currentReplyText,
                     senderId: group.person?._id,
@@ -94,7 +94,7 @@ function Messages() {
                 [group.key]: ""
             }));
 
-            const res = await axios.get("http://localhost:5000/messages", {
+            const res = await axios.get("https://reloop-backend.onrender.com/messages", {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setMessages(res.data);
@@ -123,7 +123,7 @@ function Messages() {
 
     const handleDelete = async (group) => {
         try {
-            await axios.delete("http://localhost:5000/messages/conversation", {
+            await axios.delete("https://reloop-backend.onrender.com/messages/conversation", {
                 headers: { "Authorization": `Bearer ${token}` },
                 data: {
                     otherUserId: group.person?._id,

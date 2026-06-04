@@ -22,7 +22,7 @@ function ProfilePage() {
         }
 
         axios
-            .get("http://localhost:5000/user/profile", {
+            .get("https://reloop-backend.onrender.com/user/profile", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -81,7 +81,7 @@ function ProfilePage() {
 
         try {
             const response = await axios.patch(
-                "http://localhost:5000/user/profile",
+                "https://reloop-backend.onrender.com/user/profile",
                 {
                     name: formData.name,
                     email: formData.email,

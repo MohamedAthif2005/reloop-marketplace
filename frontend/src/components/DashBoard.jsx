@@ -14,7 +14,7 @@ function DashBoard() {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/products/deleteproduct/${id}`,
+        `https://reloop-backend.onrender.com/products/deleteproduct/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -31,7 +31,7 @@ function DashBoard() {
     setProducts((prev) => prev.map((p) => (p._id === id ? { ...p, status: "Sold" } : p)))
     try {
       await axios.put(
-        `http://localhost:5000/products/sold/${id}`,
+        `https://reloop-backend.onrender.com/products/sold/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -43,7 +43,7 @@ function DashBoard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/dashboard", {
+        const response = await axios.get("https://reloop-backend.onrender.com/dashboard", {
           headers: { Authorization: `Bearer ${token}` },
         })
         setProducts(response.data.products || [])
@@ -77,7 +77,7 @@ function DashBoard() {
                 <div className="product-card" key={product._id}>
                   {
                     (() => {
-                      const backendBase = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+                      const backendBase = import.meta.env.VITE_API_URL || 'https://reloop-backend.onrender.com'
                       const src = product.image || (product.images && product.images.length ? `${backendBase}${product.images[0]}` : productPlaceholder)
                       return <img className="product-image" src={src} alt={product.title} />
                     })()
