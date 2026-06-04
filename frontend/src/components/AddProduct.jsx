@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import { cities } from "../data/cities"
 
 function AddProduct() {
+    useDocumentTitle("Reloop | Add Product")
     const [formData, setFormData] = useState({ title: "", description: "", price: "", category: "", condition: "", location: "" })
     const [selectedFile, setSelectedFile] = useState(null)
     const [previewUrl, setPreviewUrl] = useState("")

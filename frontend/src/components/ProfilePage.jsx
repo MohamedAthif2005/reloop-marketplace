@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import { cities } from "../data/cities"
 
 function ProfilePage() {
+    useDocumentTitle("Reloop | Profile")
     const [user, setUser] = useState(null)
     const [message, setMessage] = useState("")
     const [formData, setFormData] = useState({ name: "", email: "", phone: "", city: "" })

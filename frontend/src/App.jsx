@@ -11,8 +11,10 @@ import EditProduct from "./components/EditProduct"
 import AllProducts from "./components/AllProducts"
 import ViewProduct from "./components/ViewProduct"
 import Messages from "./components/Messages"
+import ContactPage from "./components/ContactPage"
 import ProtectedRoute from "./components/ProtectedRoute"
 import AuthLayout from "./components/AuthLayout"
+
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -22,7 +24,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/contact" element={<LandingPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route
           path="/profile"
           element={

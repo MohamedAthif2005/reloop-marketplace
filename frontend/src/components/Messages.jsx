@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import useDocumentTitle from "../hooks/useDocumentTitle"
 
 function Messages() {
+    useDocumentTitle("Reloop | Messages")
     const [messages, setMessages] = useState([]);
     const [replies, setReplies] = useState({});
     const [statusMessage, setStatusMessage] = useState("");

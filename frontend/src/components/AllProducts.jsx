@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import { cities } from "../data/cities";
 
 function AllProducts({ searchTerm: propSearchTerm, setSearchTerm: setParentSearchTerm }) {
+  useDocumentTitle("Reloop | Products")
   const [internalSearchTerm, setInternalSearchTerm] = useState(propSearchTerm ?? "");
   const searchValue = propSearchTerm !== undefined ? propSearchTerm : internalSearchTerm;
   const [products, setProducts] = useState([]);

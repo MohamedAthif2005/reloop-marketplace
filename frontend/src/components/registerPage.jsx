@@ -1,11 +1,13 @@
 import React from "react"
 import {useState} from "react"
 import {useNavigate} from "react-router-dom"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import { cities } from "../data/cities"
 import axios from "axios"
 
 function RegisterPage() {
     const navigate = useNavigate()
+    useDocumentTitle("Reloop | Register")
     const [formData,setFormData] = useState({name:"",email:"",phone:"",password:"",city:""})
     const [message,setMessage] = useState("")
 

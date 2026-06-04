@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"   
 import { useNavigate, useParams } from "react-router-dom"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import { cities } from "../data/cities"
 
 function EditProduct() {
+    useDocumentTitle("Reloop | Edit Product")
     const [formData, setFormData] = useState({ title: "", description: "", price: "", category: "", condition: "", location: "" })
     const [message, setMessage] = useState("")
     const navigate = useNavigate()

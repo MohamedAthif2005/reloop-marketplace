@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 
 const productPlaceholder = "https://via.placeholder.com/640x360?text=Product+Image"
 
 function ViewProduct() {
+    useDocumentTitle("Reloop | View Product")
     const [product, setProduct] = useState(null)
     const [message, setMessage] = useState("")
     const [senderMessage, setSenderMessage] = useState("")

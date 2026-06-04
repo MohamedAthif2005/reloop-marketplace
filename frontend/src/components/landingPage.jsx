@@ -1,17 +1,19 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 
 function LandingPage() {
     const navigate = useNavigate()
+    useDocumentTitle("Reloop | Home")
 
     return (
         <div className="container">
             <header className="header">
                 <div className="logo">RELOOP</div>
                 <nav className="nav">
-                    <a className="nav-link" href="/register">Register</a>
-                    <a className="nav-link" href="/login">Login</a>
-                    <a className="nav-link" href="/contact">Contact</a>
+                    <Link className="nav-link" to="/register">Register</Link>
+                    <Link className="nav-link" to="/login">Login</Link>
+                    <Link className="nav-link" to="/contact">Contact</Link>
                 </nav>
             </header>
 

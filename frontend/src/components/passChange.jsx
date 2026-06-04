@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 
 function PassChange() {
+    useDocumentTitle("Reloop | Change Password")
 
     const [oldPassword, setOldPassword] = useState("")
     const [newPassword, setNewPassword] = useState("")

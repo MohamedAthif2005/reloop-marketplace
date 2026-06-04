@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 
 const productPlaceholder = "https://via.placeholder.com/320x180?text=Product"
 
 function DashBoard() {
+  useDocumentTitle("Reloop | Dashboard")
   const [products, setProducts] = useState([])
   const [message, setMessage] = useState("")
 
