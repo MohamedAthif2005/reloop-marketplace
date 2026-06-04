@@ -1,0 +1,22 @@
+export const cities = {
+  Chennai: "Chennai",
+  Coimbatore: "Coimbatore",
+  Madurai: "Madurai",
+  Tiruchirappalli: "Tiruchirappalli",
+  Salem: "Salem",
+  Tiruppur: "Tiruppur",
+  Erode: "Erode",
+  Vellore: "Vellore",
+  Thanjavur: "Thanjavur",
+  Thoothukudi: "Thoothukudi",
+  Dindigul: "Dindigul",
+  Nagercoil: "Nagercoil",
+  Kanchipuram: "Kanchipuram",
+  Villupuram: "Villupuram",
+  Pudukkottai: "Pudukkottai",
+  Tirunelveli: "Tirunelveli",
+  Cuddalore: "Cuddalore",
+  Nagapattinam: "Nagapattinam",
+  Karur: "Karur",
+  Ranipet: "Ranipet"
+};
