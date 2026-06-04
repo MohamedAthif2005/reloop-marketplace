@@ -15,7 +15,7 @@
 
     app.use("/api/auth",require("./routes/authRoutes"))
     app.use("/user",require("./routes/profileRoute"))
-    app.use("/dashboard",require("./routes/dashroute"))
+    app.use("/dashboard",require("./routes/dashRoute"))
     app.use("/products",require("./routes/productRoute"))
     app.use("/messages",require("./routes/messageRoute"))
 
